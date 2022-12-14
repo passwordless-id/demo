@@ -15,8 +15,10 @@ window.passwordless = {
       // Display it
       const json = await res.json()
       console.log(json)
-
-      const userinfo = JSON.parse(atob(json.id_token.split('.')[1]))
+      // Please note that the JWT signature is not verified in this example
+      // The profile is simply extracted
+      const payload = json.id_token.split('.')[1]
+      const userinfo = JSON.parse(atob(payload.replaceAll('-', '+').replaceAll('_', '/')))
       console.log(userinfo)
       
       showUser(userinfo)
