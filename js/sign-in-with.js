@@ -28,8 +28,8 @@ async function init() {
 init()
 
 function showUser(user) {
-  document.querySelector('#profile img').src = user.profile.picture
-  document.querySelector('#profile h1').textContent = user.profile.nickname
+  document.getElementById('picture').src = user.profile.picture
+  document.getElementById('nickname').textContent = user.profile.nickname
   document.querySelector('#output code').textContent = JSON.stringify(user, null, ' ')
 
   document.getElementById('spinner').hidden = true

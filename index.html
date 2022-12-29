@@ -10,6 +10,8 @@
 </head>
 <body>
 
+    <h3>This could be any website</h3>
+
     <div id="spinner" class="spinner-border text-light" role="status">
         <span class="visually-hidden">Loading...</span>
     </div>
@@ -20,8 +22,8 @@
 
     <section id="profile" class="card shadow profile" hidden>
         <div class="card-body">
-            <img />
-            <h1>Nickname</h1>
+            <img id="picture"/>
+            <h3 id="nickname">Nickname</h3>
         </div>
     </section>
 
@@ -31,9 +33,9 @@
         </div>
     </section>
 
-    <button id="sign-out" class="btn btn-light hidden" onclick="onClickSignOut()" hidden>Sign Out</button>
+    <button id="sign-out" class="btn btn-light" onclick="onClickSignOut()" hidden>Sign Out</button>
 
-    <footer style="position: absolute; bottom: 1rem;">
+    <footer>
         <a href="https://github.com/passwordless-id/demo">See the code on GitHub</a>
     </footer>
     
