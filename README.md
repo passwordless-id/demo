@@ -31,9 +31,27 @@ async function init() {
   // retrieves the user profile and `id_token` if available
   const user = await passwordless.id({ scope })
   if (user.signedIn && user.scopeGranted)
-    showUser(user.profile)
+    showUser(user)
   else
     showSignIn()
 }
 init()
 ```
+
+The retrieved `user` has the following structure.
+
+```json
+{
+ "signedIn": true,
+ "scopeGranted": true,
+ "id_token": "eyJ0eXAiOiJK...",
+ "profile": {
+  "nickname": "Johny",
+  "picture": "https://ui.passwordless.id/avatars/sam.svg",
+  "preferred_username": "johndoe",
+  "...": "...more attributes depending on requested scope"
+ }
+}
+```
+
+Once you obtain the user, you can also send the `token_id` to your server API as proof of the user's authenticity. This is a Json Web Token containing a signature that can be verified by common libraries.
