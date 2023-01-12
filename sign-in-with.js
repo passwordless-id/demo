@@ -3,12 +3,12 @@ import passwordless from 'https://unpkg.com/@passwordless-id/connect'
 // the information requested from the profile
 const scope = 'openid avatar email'
 
-window.onClickSignIn = () => {
+function signIn() {
   // performs a redirect to let the user authenticate and/or authorize this app
   passwordless.auth({ scope })
 }
 
-window.onClickSignOut = async () => {
+function signOut() {
   // performs a redirect to let the user sign out
   passwordless.logout()
 }
@@ -25,7 +25,6 @@ async function init() {
   }
 }
 
-init()
 
 function showUser(user) {
   document.getElementById('picture').src = user.profile.picture
@@ -42,4 +41,11 @@ function showUser(user) {
 function showSignIn() {
   document.getElementById('spinner').hidden = true
   document.getElementById('sign-in').hidden = false
+}
+
+// global export
+window.app = {
+  signIn,
+  signOut,
+  init
 }
