@@ -12,7 +12,7 @@ It uses the OAuth2 / OpenID flow using the [@passwordless-id/connect](https://gi
 The code for that looks as follows.
 
 ```js
-import passwordless from 'https://unpkg.com/@passwordless-id/connect'
+import passwordless from 'https://unpkg.com/@passwordless-id/connect@1.2.0/dist/connect.min.js'
 
 // the information requested from the profile
 const scope = 'openid avatar email'
