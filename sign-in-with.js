@@ -1,4 +1,4 @@
-import passwordless from 'https://unpkg.com/@passwordless-id/connect'
+import passwordless from 'https://unpkg.com/@passwordless-id/connect@1.2.0/dist/connect.min.js'
 
 // the information requested from the profile
 const scope = 'openid avatar email'
